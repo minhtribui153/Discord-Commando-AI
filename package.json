@@ -1,0 +1,43 @@
+{
+    "name": "s1-sd5-central",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node ./sources/index.js",
+        "dev": "nodemon ./sources/index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "_moduleAliases": {
+        "@root": "./sources",
+        "@util": "./sources/util",
+        "@features": "./sources/features/features",
+        "@commands": "./sources/utilities",
+        "@images": "./sources/images",
+        "@games": "./sources/games",
+        "@data": "./sources/data",
+        "@package": "./",
+        "@schemas": "./sources/schemas",
+        "@system": "./sources/system"
+    },
+    "dependencies": {
+        "axios": "^0.21.1",
+        "chart.js": "^2.9.4",
+        "chartjs-node-canvas": "^3.0.6",
+        "commando-provider-mongo": "^2.0.2",
+        "discord-slash-commands-client": "^1.1.1",
+        "discord-tictactoe": "^2.0.7",
+        "discord.js": "^12.5.1",
+        "discord.js-commando": "github:discordjs/Commando",
+        "js-yaml": "^4.0.0",
+        "module-alias": "^2.2.2",
+        "mongodb": "^3.6.4",
+        "mongoose": "^5.9.24",
+        "nodemon": "^2.0.7",
+        "quick.hook": "^1.5.1",
+        "translate-google-api": "^1.0.4"
+    }
+}

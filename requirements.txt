@@ -1,0 +1,15 @@
+axios
+chart.js
+chartjs-node-canvas
+commando-provider-mongo
+discord-slash-commands-client
+discord-tictactoe
+discord.js
+discord.js-commando: https://github.com/discordjs/Commando
+js-yaml
+module-alias
+mongodb
+mongoose
+nodemon
+quick.hook
+translate-google-api

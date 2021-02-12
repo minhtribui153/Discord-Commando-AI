@@ -1,0 +1,11 @@
+{
+    "regions" : {
+        "NA": "North America",
+        "AS": "Asia",
+        "EU": "Europe"
+    },
+    "options": {
+        "PRIVATE": "🔒 Private",
+        "PUBLIC": "🌏 Public"
+    }
+}

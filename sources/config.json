@@ -1,0 +1,7 @@
+{
+    "name": "S1-SD5 Central",
+    "token": "Nzk1NjM1OTU3NDUyNzY3MjUy.X_MPug.O4Clmx-dZTLAJ1PZCh8m8dX5uek",
+    "prefix": "^",
+    "clientId": "788689634921152542",
+    "mongoPath": "mongodb://tribui:Tri2107@35.197.136.120/S1-SD5-Central"
+}
