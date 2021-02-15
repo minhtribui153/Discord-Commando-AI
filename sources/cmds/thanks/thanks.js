@@ -76,6 +76,6 @@ module.exports = class ThanksCommand extends Commando.Command {
         })
 
         const amount = result.received
-        message.reply(`You have thanked <@${targetId}>! They now have ${amount} thanks.`)
+        message.reply(`You have thanked <@${targetId}> for helping you! They now have ${amount} thanks.`)
     }
 }
