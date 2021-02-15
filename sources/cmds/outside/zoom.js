@@ -15,6 +15,11 @@ module.exports = class ZoomCommand extends Commando.Command {
 
     run = async (message, args) => {
         const [meeting_id, password] = args
+        const { guild } = message
+        if (!guild) {
+            message.reply('This command is not supported in Direct Message')
+            return
+        }
         if (!meeting_id || !password) {
             message.reply(`Wrong Syntax! Correct Syntax: ${message.guild.commandPrefix}zoom \`<meeting_id> <password>\``)
             return
