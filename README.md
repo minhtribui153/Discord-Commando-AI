@@ -1,7 +1,7 @@
 # <b>Discord Commando AI</b>
 Welcome to the documentation of Discord Commando AI.
 
-We will go through on how this bot is built for and how to use it.
+We will go through on how this bot is built in for and how to use it.
 
 -----
 > ## <b>What's in store?</b>
