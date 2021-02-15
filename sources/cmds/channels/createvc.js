@@ -14,13 +14,14 @@ module.exports = class CreateTextChannelCommand extends Commando.Command {
             ],
             userPermissions: [
                 'MANAGE_CHANNELS'
-            ]
+            ],
+            examples: ['createvc Gaming', 'createvc Music', 'createvc Meeting', 'createvc Among Us'],
         })
     }
 
     async run(message, args) {
         const { guild } = message
-        const name = message.content.replace(`${guild.commandPrefix}createvc `, '');
+        const name = args.join('')
 
         message.guild.channels
             .create(name, {

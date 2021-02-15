@@ -41,6 +41,8 @@ module.exports = (client) => {
     client.on('message', (message) => {
         const { guild, channel, content, member } = message
 
+        if (!guild) return
+
         const cachedChannelId = suggestionCache[guild.id]
         if (cachedChannelId && cachedChannelId === channel.id && !member.user.bot) {
             message.delete()
@@ -55,7 +57,7 @@ module.exports = (client) => {
                     name: 'Status',
                     value: status.text,
                 })
-                .setFooter('Want to suggest something? Simply type it in this channel')
+                .setFooter('Want to suggest something? Simply type it in this channel!')
 
                 channel.send(embed).then((messages) => {
                     messages.react('👍').then(() => {

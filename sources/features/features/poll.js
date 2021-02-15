@@ -1,17 +1,17 @@
-const config = require('@root/config.json');
+const config = require('@root/config.json')
 
 module.exports = client => {
     const channelIds = [
         // 'Specify a channel id' // Polls Channel
-    ];
+    ]
 
     const addReactions = message => {
-        message.react('👍');
+        message.react('👍')
 
         setTimeout(() => {
-            message.react('👎');
-        }, 750);
-    };
+            message.react('👎')
+        }, 750)
+    }
 
     client.on('message', async message => {
         if (channelIds.includes(message.channel.id)) {
@@ -19,10 +19,10 @@ module.exports = client => {
         } else if (message.content.toLowerCase() === `${config.prefix}poll`) {
             await message.delete()
 
-            const fetched = await message.channel.messages.fetch({ limit: 1 });
+            const fetched = await message.channel.messages.fetch({ limit: 1 })
             if (fetched && fetched.first()) {
                 addReactions(fetched.first())
-            };
-        };
-    });
-};
+            }
+        }
+    })
+}

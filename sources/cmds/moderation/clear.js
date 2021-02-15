@@ -19,7 +19,7 @@ module.exports = class ClearCommand extends Commando.Command {
 
     async run(message, args) {
         message.channel.messages.fetch().then(results => {
-            message.channel.delete(results)
+            message.channel.bulkDelete(results)
         })
     }
 }

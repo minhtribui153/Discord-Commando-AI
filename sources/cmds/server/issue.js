@@ -11,7 +11,7 @@ const registerEvent = client => {
 
     registered = true
 
-    console.log('INFO: Registering Events')
+    console.log('[INFO] Registering Events')
 
     client.on('messageReactionAdd', (reaction, user) => {
         if (user.bot) {

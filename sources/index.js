@@ -1,33 +1,29 @@
-// S1-SD5 Central
-
 // Imports
 require('module-alias/register')
 
-// const Discord = require('discord.js')
-// const client = new Discord.Client()
 const { MongoClient } = require('mongodb')
 const { MongoDBProvider } = require('commando-provider-mongo')
 
 const Commando = require('discord.js-commando')
 const path = require('path')
 const Time = new Date(0)
-const config = require('@root/config.json')
+const config = require('./config.json')
 const loadCommands = require('@commands/load-commands')
 const mongo = require('@commands/mongo')
-
 const TicTacToe = require('discord-tictactoe')
 const interactions = require('discord-slash-commands-client')
 
+// Create Tic Tac Toe Bot
 const bot = new TicTacToe({
     clientId: config.clientId,
     token: config.token,
-    language: 'en',
+    language: config.language,
     command: 'Tic-Tac-Toe'
 })
 
-bot.connect().then(console.log('INFO: Created Tic Tac Toe Command!')).catch(() => console.error("Cannot connect TicTacToe bot"));
+bot.connect().then(console.log('[INFO] Created Tic Tac Toe Command!')).catch(() => console.error("Cannot connect TicTacToe bot"));
 
-// Modules
+// Features
 const prefix = config.prefix
 const inviteNotify = require('@features/invite-notification')
 const Polls = require('@features/poll')
@@ -38,9 +34,13 @@ const advancedSuggestions = require('@features/advanced-suggestions')
 const msgs = require('@features/msgs')
 const thanksLeaderboard = require('@features/thanks-leaderboard')
 const mute = require('@features/mute')
+const modLogs = require('@features/mod-logs')
+const { Channel } = require('discord.js')
 
+
+// Create Commando Bot
 const client = new Commando.CommandoClient({
-    owner: '710319131983085599',
+    owner: config.ownerId,
     commandPrefix: prefix
 })
 
@@ -58,22 +58,27 @@ client.setProvider(
 // Events
 client.on('ready', async () => {
 
+// Start MongoDB connection
     await mongo()
+    
+// When Discord Bot is ready, do something
+    console.log("[INFO] Bot is ready.")
 
-    console.log("INFO: Bot is ready.")
 
-    const something = client.registry
+// Register Commands
+    client.registry
         .registerGroups([
-            ['school', 'School'],
-            ['math', 'Math'],
-            ['moderation', 'Moderation'],
+            ['school', 'School Matters'],
+            ['math', 'Mathematics Calculation'],
+            ['moderation', 'Moderator'],
             ['evaluation', 'Evaluation'],
-            ['channels', 'Channels'],
-            ['giveaway', 'Giveaway'],
-            ['games', 'Games'],
-            ['role', 'Role'],
-            ['server', 'Server'],
-            ['settings', 'Settings'],
+            ['channels', 'Set Channels'],
+            ['polling', 'Polling'],
+            ['giveaway', 'Bot Giveaway'],
+            ['games', 'Game Content'],
+            ['role', 'Manage Roles'],
+            ['server', 'Server Commands'],
+            ['settings', 'System Settings'],
             ['outside', 'Happening Outside'],
             ['documentation', 'Discord.JS Documentation'],
             ['suggestions', 'Suggestions'],
@@ -82,15 +87,8 @@ client.on('ready', async () => {
         .registerDefaults()
         .registerCommandsIn(path.join(__dirname, 'cmds'))
 
-    // Variables
-    const guild = client.guilds.cache.get('795605968112058378')
-
-    // Load all commands and features
-    //console.log('<-----------|Commands|----------->')
-    //loadCommands(client)
-    //console.log('<-----------|Features|----------->')
-    //loadFeatures(client)
-
+// Features
+    // Check for messages and shortcuts from members
     msgs(client)
 
     // Invite Notification
@@ -104,14 +102,18 @@ client.on('ready', async () => {
 
     // Polls & Advanced Polls (Choose one)
     advancedPolls(client)
-    advancedSuggestions(client)
     Polls(client)
-    thanksLeaderboard(client)
-    mute(client)
-})
 
-client.on('message', message => {
+    // Advanced Suggestions
+    advancedSuggestions(client)
     
-})
+    // Thanks Leaderboard
+    thanksLeaderboard(client)
 
+    // Check for mutes from members in MongoDB
+    mute(client)
+
+    // Moderation Logging
+    modLogs(client)
+})
 client.login(config.token)

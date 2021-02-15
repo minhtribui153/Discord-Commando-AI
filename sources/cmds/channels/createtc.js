@@ -14,7 +14,8 @@ module.exports = class CreateTCCommand extends Commando.Command {
             ],
             userPermissions: [
                 'MANAGE_CHANNELS'
-            ]
+            ],
+            examples: ['createtc mod-logs', 'createtc among-us']
         })
     }
 

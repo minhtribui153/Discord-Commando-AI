@@ -8,14 +8,18 @@ module.exports = class StatusCommand extends Commando.Command {
             group: 'server',
             memberName: 'status',
             format: '<status>',
+            userPermissions: [
+                'ADMINISTRATOR'
+            ],
             description: 'Edits the status of the bot.',
+            argsType: 'multiple',
         })
     }
 
-    async run(message) {
-        const content = message.content.replace(`${prefix}status`, '');
+    async run(message, args) {
+        const content = args.join(' ')
         
-        client.user.setPresence({
+        this.client.user.setPresence({
             activity: {
                 name: content,
                 type: 0
