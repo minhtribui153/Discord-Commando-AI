@@ -4,6 +4,7 @@ Welcome to Discord Commando AI repository!
 We will go through on how this bot is built for and how to use it.
 
 -----
+
 > ## <b>What's in store?</b>
 > - <b>Built-in Commando</b><br>
 This bot has the package Commando installed, which is an add-on package to build commands.
@@ -38,13 +39,17 @@ You can set this up through the [config.json](./sources/config.json) file. I hav
 >```
 
 Once you are done, make sure you are in the same directory as [package.json](./package.json), and type this:
-```
+
+```terminal
 npm start
 ```
+
 If you do not want to both install the module and run the package, use this command:
-```
+
+```terminal
 npm run script
 ```
+
 Once you are done, your bot is up and ready! Test it out on your server!
 
-> You can help give feedbacks to me so that I can improve this package.
+> Learn more about Discord.JS and MongoDB by starting into chapters folder.
