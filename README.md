@@ -18,7 +18,7 @@ There are about 7 features created to help develop this bot. These features can 
 > - <b>Suggestions</b><br>
 In order to have a stable server for everyone, this Commando command helps to let you set a channel for suggestions and accept or deny suggestions from members.
 > - <b>And so much more!</b><br>
-You can look at the code to see more what this package can do for your bot. This README.file will be soon updated for more information.
+You can look at the code to see more what this package can do for your bot. This README.file will soon be updated for more information.
 
 ----
 ## <b>How to set up your own bot using this package?</b>
