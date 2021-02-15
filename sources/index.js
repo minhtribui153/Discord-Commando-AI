@@ -49,7 +49,7 @@ client.setProvider(
         useUnifiedTopology: true,
       })
         .then((client) => {
-            return new MongoDBProvider(client, 'S1-SD5-Central')
+            return new MongoDBProvider(client, config.database)
         }).catch((err) => {
             console.error(err)
         })

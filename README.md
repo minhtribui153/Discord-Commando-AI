@@ -31,7 +31,8 @@ You can set this up through the [config.json](./sources/config.json) file. I hav
 >    "prefix": "^",
 >    "clientId": "<bot_id>",
 >    "ownerId": "<your_id>",
->    "mongoPath": "mongodb://<username>:<password>@<mongodb_server_ip>/<database_name>",
+>    "mongoPath": "mongodb://<username>:<password>@<mongodb_server_ip>:27017/<database_name>",
+>    "database": "<your_mongo_database>",
 >    "language": "en"
 >}
 >```
