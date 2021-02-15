@@ -1,9 +1,9 @@
 {
-    "name": "S1-SD5 Central",
-    "token": "Nzk1NjM1OTU3NDUyNzY3MjUy.X_MPug.O4Clmx-dZTLAJ1PZCh8m8dX5uek",
+    "name": "<your_bot_name>",
+    "token": "<your_bot_token>",
     "prefix": "^",
-    "clientId": "788689634921152542",
-    "ownerId": "710319131983085599",
-    "mongoPath": "mongodb://tribui:Tri2107@35.197.136.120/S1-SD5-Central",
+    "clientId": "<bot_id>",
+    "ownerId": "<your_id>",
+    "mongoPath": "mongodb://<username>:<password>@<mongodb_server_ip>/<database_name>",
     "language": "en"
 }

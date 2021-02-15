@@ -1,14 +1,17 @@
 {
-    "name": "s1-sd5-central",
-    "version": "1.0.0",
-    "description": "",
+    "name": "discord-commando-ai",
+    "version": "5.2.0",
+    "description": "This is a bot built-in with Discord.JS and Commando. It has MongoDB installed to store data. You will need to provide your own MongoDB path in this package.",
     "main": "index.js",
     "scripts": {
         "script": "nodemon ./sources/index.js",
         "start": "npm i && nodemon ./sources/index.js"
     },
     "keywords": [],
-    "author": "",
+    "author": "Minh Tri Bui",
+    "repository": {
+        "url": "https://github.com/tribui141108/Discord-Commando-AI"
+    },
     "license": "ISC",
     "_moduleAliases": {
         "@root": "./sources",
