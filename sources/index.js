@@ -35,6 +35,7 @@ const msgs = require('@features/msgs')
 const thanksLeaderboard = require('@features/thanks-leaderboard')
 const mute = require('@features/mute')
 const modLogs = require('@features/mod-logs')
+const loadLanguages = require('@features/language').loadLanguages
 const { Channel } = require('discord.js')
 
 
@@ -82,7 +83,8 @@ client.on('ready', async () => {
             ['outside', 'Happening Outside'],
             ['documentation', 'Discord.JS Documentation'],
             ['suggestions', 'Suggestions'],
-            ['thanks', 'Thanks people']
+            ['thanks', 'Thanks people'],
+            ['languages', 'Language Selector']
         ])
         .registerDefaults()
         .registerCommandsIn(path.join(__dirname, 'cmds'))
@@ -115,5 +117,8 @@ client.on('ready', async () => {
 
     // Moderation Logging
     modLogs(client)
+
+    // Load Languages
+    loadLanguages(client)
 })
 client.login(config.token)

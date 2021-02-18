@@ -5,6 +5,16 @@
             "english": "The sum is",
             "vietnamese": "Tổng cộng là",
             "spanish": "la suma es"
+        },
+        "ARE_YOU_SURE_YOU_WANT_TO_DELETE_THIS_CHANNEL_THIS_ACTION_IS_IRREVERSIBLE": {
+            "english": "Are you sure you want to delete this channel? This action is irreversible!",
+            "vietnamese": "Bạn có chắc chắn muốn xóa kênh này không? Hành động này là không thể thay đổi!",
+            "spanish": "¿Estás seguro de que deseas eliminar este canal? ¡Esta acción es irreversible!"
+        },
+        "DELETE_ABORTED": {
+            "english": "Delete Aborted",
+            "vietnamese": "Xóa đã bị hủy bỏ",
+            "spanish": "Eliminar cancelado"
         }
     }
 }
