@@ -1,5 +1,6 @@
 const Commando = require('discord.js-commando')
 const axios = require('axios')
+const language = require('@features/language')
 
 module.exports = class DocsCommand extends Commando.Command {
     constructor(client) {
@@ -15,6 +16,8 @@ module.exports = class DocsCommand extends Commando.Command {
     run = async (message, args) => {
         const uri = `https://djsdocs.sorta.moe/v2/embed?src=stable&q=${encodeURIComponent(args)}`
 
+        const { guild } = message
+
         axios
             .get(uri)
             .then((embed) => {
@@ -23,7 +26,7 @@ module.exports = class DocsCommand extends Commando.Command {
                 if (data && !data.error) {
                     message.channel.send({ embed: data })
                 } else {
-                    message.reply('Could not find that documentation!')
+                    message.reply(`${language(guild, 'DOCS_ERROR')}`)
                 }
             })
             .catch(err => {

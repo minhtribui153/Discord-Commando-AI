@@ -70,6 +70,91 @@
             "english": "The slowmode for this channel has been set to",
             "vietnamese": "Chế độ làm chậm cho kênh này đã được đặt thành",
             "spanish": "El modo lento de este canal se ha configurado en"
+        },
+        "ALREADY_HAVE_TEMP_CHANNEL": {
+            "english": "You already have a temporary channel",
+            "vietnamese": "Bạn đã có một kênh tạm thời rồi",
+            "spanish": "Ya tienes un canal temporal"
+        },
+        "TEMP_CHANNEL_TAGGED": {
+            "english": "You have been tagged in a channel, please check it.",
+            "vietnamese": "Bạn đã được gắn thẻ trong một kênh, xin vui lòng kiểm tra nó.",
+            "spanish": "Te han etiquetado en un canal, compruébalo."
+        },
+        "MSG_TEMP_CHANNEL": {
+            "english": "This channel is a temporary channel.\nIt will be deleted in",
+            "vietnamese": "Kênh này là kênh tạm thời.\nNó sẽ bị xóa sau",
+            "spanish": "Este canal es temporal.\nSe eliminará en"
+        },
+        "MSG_TEMP_CHANNEL_2": {
+            "english": "minute(s)",
+            "vietnamese": "phút",
+            "spanish": "minuto(s)"
+        },
+        "DOCS_ERROR": {
+            "english": "Could not find that documentation!",
+            "vietnamese": "Không thể tìm thấy tài liệu đó!",
+            "spanish": "¡No se pudo encontrar esa documentación!"
+        },
+        "AMONG_US_ERR_1": {
+            "english": "Please specify the \"Among Us\" category ID",
+            "vietnamese": "Vui lòng chỉ định ID danh mục \"Among Us\"",
+            "spanish": "Especifique el ID de la categoría \"Among Us\""
+        },
+        "AMONG_US_ERR_2": {
+            "english": "That category name is",
+            "vietnamese": "Tên danh mục đó là",
+            "spanish": "¡El nombre de esa categoría es"
+        },
+        "AMONG_US_ERR_3": {
+            "english": "not \"Among Us\"!",
+            "vietnamese": "không phải \"Among Us\"!",
+            "spanish": "no \"Among Us\"!"
+        },
+        "AMONG_US_CAT_SET": {
+            "english": "Among Us category set!",
+            "vietnamese": "Danh mục Among Us đã thiết lập!",
+            "spanish": "conjunto de categorías de Among Us!"
+        },
+        "AMONG_US_REG_ERR": {
+            "english": "Incorrect Region Code.\nPlease choose one of the following:\n",
+            "vietnamese": "Mã vùng không chính xác.\nVui lòng chọn một trong các tùy chọn sau:\n",
+            "spanish": "Código de región incorrecto.\nElija una de las siguientes opciones:\n"
+        },
+        "AMONG_US_CODE_ERR": {
+            "english": "Please specify the game code",
+            "vietnamese": "Vui lòng ghi rõ mã trò chơi",
+            "spanish": "Especifica el código del juego"
+        },
+        "AMONG_US_REG_ERR_2": {
+            "english": "Please specify a region",
+            "vietnamese": "Vui lòng chỉ định một khu vực",
+            "spanish": "Especifica una región"
+        },
+        "AMONG_US_CAT_ERR": {
+            "english": "Please set a category called \"Among Us\" in this server",
+            "vietnamese": "Vui lòng đặt một danh mục có tên \"Among Us\" trong máy chủ này",
+            "spanish": "Establezca una categoría llamada \"Among Us\" en este servidor"
+        },
+        "AMONG_US_EMBED_1": {
+            "english": "New Among Us Game!",
+            "vietnamese": "Trò chơi Among Us mới!",
+            "spanish": "¡Nuevo juego de Among Us!"
+        },
+        "AMONG_US_EMBED_2": {
+            "english": "Open the Among Us App and enter code",
+            "vietnamese": "Mở ứng dụng Among Us và nhập mã",
+            "spanish": "Abra la aplicación de Among Us e ingrese el código"
+        },
+        "AMONG_US_EMBED_3": {
+            "english": "now!",
+            "vietnamese": "ngay bây giờ!",
+            "spanish": "ahora!"
+        },
+        "AMONG_US_EMBED_4": {
+            "english": "Once you are done, enter the voice channel",
+            "vietnamese": "Sau khi bạn hoàn tất, hãy vào kênh thoại",
+            "spanish": "Una vez que haya terminado, ingrese al canal de voz"
         }
     }
 }

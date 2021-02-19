@@ -14,7 +14,7 @@ module.exports = (client) => {
       const stat = fs.lstatSync(path.join(__dirname, dir, file))
       if (stat.isDirectory()) {
         readFeatures(path.join(dir, file))
-      } else if (file !== 'load-features.js' && file !== 'first-message.js') {
+      } else if (file !== 'load-features.js' && file !== 'first-message.js' && file !== 'message.js' && file !== 'private-message.js' && file !== 'languages.js') {
         try {
             const feature = require(path.join(__dirname, dir, file))
             feature(client)

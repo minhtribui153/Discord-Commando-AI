@@ -1,5 +1,6 @@
 const Commando = require('discord.js-commando')
 const tempChannelSchema = require('@schemas/temp-channels-schema')
+const language = require('@features/language')
 
 module.exports = class TempChannelCommand extends Commando.Command {
     constructor(client) {
@@ -31,17 +32,17 @@ module.exports = class TempChannelCommand extends Commando.Command {
         })
     
         if (results) {
-            message.reply('You already have a temporary channel')
+            message.reply(`${language(guild, 'ALREADY_HAVE_TEMP_CHANNEL')}`)
             return
         }
     
-        message.reply('You have been tagged in a channel, please check it.')
+        message.reply(`${language(guild, 'TEMP_CHANNEL_TAGGED')}`)
     
         const role = guild.roles.cache.find((role) => {
             return role.name === '@everyone'
         })
     
-        const newChannel = await guild.channels.create('Test Temp Channel', {
+        const newChannel = await guild.channels.create('Temp Channel', {
             parent: categoryId, // Community category
             permissionOverwrites: [
                 {
@@ -55,7 +56,7 @@ module.exports = class TempChannelCommand extends Commando.Command {
             ],
         })
     
-        newChannel.send(`This channel is a temporary channel.\nIt will be deleted in ${expire} minute(s)`)
+        newChannel.send(`${language(guild, 'MSG_TEMP_CHANNEL')} ${expire}${language(guild, 'MSG_TEMP_CHANNEL_2')}`)
     
         const expires = new Date()
         expires.setMinutes(expires.getMinutes() + expire)

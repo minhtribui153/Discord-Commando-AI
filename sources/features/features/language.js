@@ -1,8 +1,7 @@
 const languageSchema = require('@schemas/language-schema')
-const lang = require('@system/data/language.json')
-const { Command } = require('discord.js-commando')
+const lang = require('../../system/data/language.json')
 
-const guildLanguages = []
+let guildLanguages = {}
 
 const loadLanguages = async (client) => {
     let counter = 1
@@ -17,8 +16,10 @@ const loadLanguages = async (client) => {
             _id: guildId
         })
 
-        data[counter] = {server: name, language: `${result ? result.language : 'english'}`}
+        data[counter] = {server: name, language: result ? result.language : 'english'}
         counter += 1
+
+        guildLanguages[guildId] = result ? result.language : 'english'
     }
 
     counter = 1
@@ -35,8 +36,10 @@ module.exports = (guild, textId) => {
         throw new Error(`Unknown text ID "${textId}"`)
     }
 
-    const selectedLanguage = (!guildLanguages[guild.id] === undefined) ? guildLanguages[guild.id].toLowerCase() : 'english'
+    if (!guildLanguages[guild.id]) return
 
+    const selectedLanguage = guildLanguages[guild.id]
+    
     return lang.translations[textId][selectedLanguage]
 }
 

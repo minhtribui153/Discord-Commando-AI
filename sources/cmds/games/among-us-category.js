@@ -1,5 +1,5 @@
 const Commando = require('discord.js-commando')
-
+const language = require('../../features/features/language')
 const amongUsCategorySchema = require('@schemas/among-us-category-schema')
 
 module.exports = class AmongUsCategoryCommand extends Commando.Command {
@@ -17,16 +17,17 @@ module.exports = class AmongUsCategoryCommand extends Commando.Command {
     }
 
     run = async (message, args) => {
+        const { guild } = message
         const categoryId = args
         if (!categoryId) {
-            message.reply('Please specify the "Among Us" category ID')
+            message.reply(`${language(guild, 'AMONG_US_ERR_1')}`)
             return
         }
 
         const category = message.guild.channels.cache.get(categoryId)
 
         if (!category.name === 'Among Us') {
-            message.reply(`That category name is "${category}", not "Among Us"!`)
+            message.reply(`${language(guild, 'AMONG_US_ERR_2')} "${category}", ${language(guild, 'AMONG_US_ERR_3')}`)
             return
         }
 
@@ -45,6 +46,6 @@ module.exports = class AmongUsCategoryCommand extends Commando.Command {
             }
         )
 
-        message.reply('Among Us category set!')
+        message.reply(`${language(guild, 'AMONG_US_CAT_SET')}`)
       }
 }

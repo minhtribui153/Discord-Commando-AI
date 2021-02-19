@@ -1,6 +1,8 @@
 const Commando = require('discord.js-commando')
 const { MessageEmbed } = require('discord.js')
 
+const language = require('../../features/features/language')
+
 const amongUsCategorySchema = require('@schemas/among-us-category-schema')
 
 const channelNameStart = 'Among Us'
@@ -35,13 +37,13 @@ module.exports = class AmongUsCommand extends Commando.Command {
 
         
         if (!region) {
-            message.reply('Please specify a region')
+            message.reply(language(guild, 'AMONG_US_REG_ERR_2'))
             return
         }
 
         const newRegion = regions[region]
         if (!newRegion) {
-            message.reply(`Incorrect Region Code.\nPlease choose one of the following:\n\`${Object.keys(regions)}\``)
+            message.reply(`${language(guild, 'AMONG_US_ERR_2')}\`${Object.keys(regions)}\``)
             return
         }
 
@@ -51,7 +53,7 @@ module.exports = class AmongUsCommand extends Commando.Command {
 
 
         if (!code) {
-            message.reply('Please specify the game code')
+            message.reply(language(guild, 'AMONG_US_CODE_ERR'))
             return
         }
 
@@ -62,7 +64,7 @@ module.exports = class AmongUsCommand extends Commando.Command {
         })
 
         if (!categoryDocument) {
-            message.reply('Please set a category called "Among Us" in this server')
+            message.reply(language(guild, 'AMONG_US_CAT_ERR'))
             return
         }
 
@@ -81,14 +83,14 @@ module.exports = class AmongUsCommand extends Commando.Command {
                 member.user.displayAvatarURL()
             )
             .setColor('#FF1100')
-            .setTitle(`❗ New Among Us Game!`)
+            .setTitle(`❗ ${language(guild, 'AMONG_US_EMBED_1')}`)
             .setDescription(
-                `Open the Among Us App and enter code "${code}" Now!`
+                `${language(guild, 'AMONG_US_EMBED_2')} "${code}" ${language(guild, 'AMONG_US_EMBED_3')}`
             )
             .setThumbnail('https://cdn.discordapp.com/attachments/775954230032465930/807587646322638858/latest.png')
             .addField('Region', newRegion)
             .addField('Status', `${options[option] ? `${options[option]}` : '❓ Not Specified'}`)
-            .setFooter(`Once you are done, enter the voice channel ${channelName}`)
+            .setFooter(`${language(guild, 'AMONG_US_EMBED_4')} ${channelName}`)
         
         channel.send(embed)
     }
