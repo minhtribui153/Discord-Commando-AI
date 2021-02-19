@@ -1,22 +1,27 @@
 const languageSchema = require('@schemas/language-schema')
-const lang = require('../../system/data/language.json')
+const lang = require('@system/data/language.json')
+const { Command } = require('discord.js-commando')
 
-const guildLanguages = {}
+const guildLanguages = []
 
 const loadLanguages = async (client) => {
-    console.log('[LANGUAGE] Here are the languages on servers')
+    let counter = 1
+    console.log('[LANGUAGE] Languages on servers')
     let data = {}
     for (const guild of client.guilds.cache) {
         const guildId = guild[0]
 
-        const name = client.guilds.cache.get(guildId)
+        const { name } = client.guilds.cache.get(guildId)
 
         const result = await languageSchema.findOne({
             _id: guildId
         })
 
-        data[name] = result ? result.language : 'english'
+        data[counter] = {server: name, language: `${result ? result.language : 'english'}`}
+        counter += 1
     }
+
+    counter = 1
 
     console.table(data)
 }

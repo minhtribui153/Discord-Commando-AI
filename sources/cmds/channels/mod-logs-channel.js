@@ -1,5 +1,6 @@
 const Commando = require('discord.js-commando')
 const modLogsChannelSchema = require('@schemas/mod-logs-channel-schema')
+const language = require('@features/language')
 const { fetchModLogChannels } = require('@features/mod-logs')
 
 module.exports = class ModLogsChannelCommand extends Commando.Command {
@@ -31,7 +32,7 @@ module.exports = class ModLogsChannelCommand extends Commando.Command {
             upsert: true
         })
 
-        message.reply(`Moderator logs channel has been set to ${channel}`)
+        message.reply(`${language(guild, 'MOD_CHANNEL_SET_TO')} ${channel}`)
 
         fetchModLogChannels(guild.id)
     }

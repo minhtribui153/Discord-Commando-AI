@@ -1,5 +1,6 @@
 const Commando = require('discord.js-commando')
 const { fetchModLogChannels, ModCache } = require('../../features/features/mod-logs')
+const language = require('@features/language')
 
 module.exports = class ModLogCommand extends Commando.Command {
     constructor(client) {
@@ -19,16 +20,16 @@ module.exports = class ModLogCommand extends Commando.Command {
 
         const channelId = ModCache()[guild.id]
         if (!channelId) {
-            message.reply('An error occurred, please report this')
+            message.reply(`${language(guild, 'AN_ERROR_OCCURRED_PLEASE_REPORT_THIS')}`)
             return
         }
 
         const channel = guild.channels.cache.get(channelId)
         if (!channel) {
-            message.reply('The moderator logs channel no longer exists')
+            message.reply(`${language(guild, 'MOD_CHANNEL_UNEXIST')}`)
             return
         }
 
-        message.reply(`The current moderator logs channel is <#${channelId}>`)
+        message.reply(`${language(guild, 'CURRENT_MOD_CHANNEL')} <#${channelId}>`)
     }
 }

@@ -21,7 +21,7 @@ const bot = new TicTacToe({
     command: 'Tic-Tac-Toe'
 })
 
-bot.connect().then(console.log('[INFO] Created Tic Tac Toe Command!')).catch(() => console.error("Cannot connect TicTacToe bot"));
+bot.connect().then(console.log('[SUCCESS] Created Tic Tac Toe Command!')).catch(() => console.error("[ERROR] Cannot connect TicTacToe bot"));
 
 // Features
 const prefix = config.prefix
@@ -37,6 +37,7 @@ const mute = require('@features/mute')
 const modLogs = require('@features/mod-logs')
 const loadLanguages = require('@features/language').loadLanguages
 const { Channel } = require('discord.js')
+const loadFeatures = require('./features/load-features')
 
 
 // Create Commando Bot
@@ -44,6 +45,8 @@ const client = new Commando.CommandoClient({
     owner: config.ownerId,
     commandPrefix: prefix
 })
+
+client.setMaxListeners(100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
 
 client.setProvider(
     MongoClient.connect(config.mongoPath, {
@@ -60,10 +63,14 @@ client.setProvider(
 client.on('ready', async () => {
 
 // Start MongoDB connection
-    await mongo()
+    try {
+        await mongo()
+    } catch(e) {
+        console.log(`[WARNING] ${e}`)
+    }
     
 // When Discord Bot is ready, do something
-    console.log("[INFO] Bot is ready.")
+    console.log("[SUCCESS] Bot is ready.")
 
 
 // Register Commands
@@ -90,35 +97,41 @@ client.on('ready', async () => {
         .registerCommandsIn(path.join(__dirname, 'cmds'))
 
 // Features
-    // Check for messages and shortcuts from members
-    msgs(client)
+    try {
+        loadFeatures(client)
 
-    // Invite Notification
-    inviteNotify(client)
+        // Check for messages and shortcuts from members
+        //msgs(client)
 
-    // Anti-Advertisement
-    antiAd(client)
+        // Invite Notification
+        //inviteNotify(client)
 
-    // Stop Vulgarities
-    vulgarities(client)
+        // Anti-Advertisement
+        //antiAd(client)
 
-    // Polls & Advanced Polls (Choose one)
-    advancedPolls(client)
-    Polls(client)
+        // Stop Vulgarities
+        //vulgarities(client)
 
-    // Advanced Suggestions
-    advancedSuggestions(client)
-    
-    // Thanks Leaderboard
-    thanksLeaderboard(client)
+        // Polls & Advanced Polls (Choose one)
+        //advancedPolls(client)
+        //Polls(client)
 
-    // Check for mutes from members in MongoDB
-    mute(client)
+        // Advanced Suggestions
+        //advancedSuggestions(client)
+        
+        // Thanks Leaderboard
+        //thanksLeaderboard(client)
 
-    // Moderation Logging
-    modLogs(client)
+        // Check for mutes from members in MongoDB
+        //mute(client)
 
-    // Load Languages
-    loadLanguages(client)
+        // Moderation Logging
+        //modLogs(client)
+
+        // Load Languages
+        loadLanguages(client)
+    } catch(e) {
+        console.log(`[ERROR] ${e}`)
+    }
 })
 client.login(config.token)

@@ -1,4 +1,5 @@
 const Commando = require('discord.js-commando')
+const language = require('@features/language')
 
 module.exports = class SlowCommand extends Commando.Command {
     constructor(client) {
@@ -13,10 +14,10 @@ module.exports = class SlowCommand extends Commando.Command {
     }
 
     run = (message, args) => {
-        const { channel } = message
+        const { channel, guild } = message
 
         if (args.length < 2) {
-            message.reply('Please provide a duration and a reason')
+            message.reply(`${language(guild, 'DURATION_REASON_ERROR')}`)
             return
         }
 
@@ -27,7 +28,7 @@ module.exports = class SlowCommand extends Commando.Command {
 
         if (isNaN(duration)) {
             message.reply(
-                'Please provide either a number of seconds or the word "off"'
+                `${language(guild, 'SECONDS_OFF_ERROR')} "off"`
             )
             return
         }
@@ -37,6 +38,6 @@ module.exports = class SlowCommand extends Commando.Command {
     //testing hello world
 
     channel.setRateLimitPerUser(duration, args.join(' '))
-    message.reply(`The slowmode for this channel has been set to ${duration}`)
+    message.reply(`${language(guild, 'SLOWMODE_SET_TO')} ${duration}`)
   }
 }

@@ -15,6 +15,61 @@
             "english": "Delete Aborted",
             "vietnamese": "Xóa đã bị hủy bỏ",
             "spanish": "Eliminar cancelado"
+        },
+        "INVALID_RESPONSE": {
+            "english": "Invalid Response",
+            "vietnamese": "Trả lời không hợp lệ",
+            "spanish": "Respuesta invalida"
+        },
+        "YOU_TOOK_TOO_LONG_TO_ANSWER": {
+            "english": "You took too long to answer.",
+            "vietnamese": "Bạn đã mất quá nhiều thời gian để trả lời.",
+            "spanish": "Tardaste demasiado en responder."
+        },
+        "TYPE_CL": {
+            "english": "Type",
+            "vietnamese": "Kiểu",
+            "spanish": "Escribe"
+        },
+        "TO_TRY_AGAIN": {
+            "english": "to try again",
+            "vietnamese": "để thử lại",
+            "spanish": "para volver a intentarlo"
+        },
+        "AN_ERROR_OCCURRED_PLEASE_REPORT_THIS": {
+            "english": "An error occurred, please report this",
+            "vietnamese": "Đã xảy ra lỗi, vui lòng báo cáo điều này",
+            "spanish": "Se produjo un error, infórmalo"
+        },
+        "MOD_CHANNEL_UNEXIST": {
+            "english": "The moderator logs channel no longer exists",
+            "vietnamese": "Người kiểm duyệt ghi lại kênh không còn ở đây",
+            "spanish": "El moderador registra el canal que ya no existe"
+        },
+        "CURRENT_MOD_CHANNEL": {
+            "english": "The current moderator logs channel is",
+            "vietnamese": "Kênh nhật ký của người kiểm duyệt hiện tại là",
+            "spanish": "El canal de registros del moderador actual es"
+        },
+        "MOD_CHANNEL_SET_TO": {
+            "english": "Moderator logs channel has been set to",
+            "vietnamese": "Kênh nhật ký của người kiểm duyệt đã được đặt thành",
+            "spanish": "El canal de registros del moderador se ha establecido en"
+        },
+        "DURATION_REASON_ERROR": {
+            "english": "Please provide a duration and a reason",
+            "vietnamese": "Vui lòng cung cấp thời hạn và lý do",
+            "spanish": "Proporcione una duración y un motivo"
+        },
+        "SECONDS_OFF_ERROR": {
+            "english": "Please provide either a number of seconds or the word",
+            "vietnamese": "Vui lòng cung cấp một số giây hoặc từ",
+            "spanish": "Proporcione una cantidad de segundos o la palabra"
+        },
+        "SLOWMODE_SET_TO": {
+            "english": "The slowmode for this channel has been set to",
+            "vietnamese": "Chế độ làm chậm cho kênh này đã được đặt thành",
+            "spanish": "El modo lento de este canal se ha configurado en"
         }
     }
 }
