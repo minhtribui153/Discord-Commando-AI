@@ -1,25 +1,13 @@
 {
-<<<<<<< HEAD
-    "name": "Discord Commando AI",
-    "token": "Nzk1NjM1OTU3NDUyNzY3MjUy.X_MPug.9dbtDeCjvfYV7RnMdEbiBX5ijrs",
-    "prefix": "^",
-    "clientId": "795635957452767252",
-    "clientSecret": "6bRejeRlZZ5PqaAhAK4yqTeOQy8iSjN6",
-    "ownerId": "710319131983085599",
-    "mongoPath": "mongodb://tribui:Tri2107@34.126.115.184:27017/Discord-Commando-AI",
-    "database": "Discord-Commando-AI",
-    "language": "en",
-    "serverIP": "192.168.1.13",
-    "webserver_port": 80
-}
-=======
     "name": "<your_bot_name>",
     "token": "<your_bot_token>",
-    "prefix": "<prefix>",
-    "clientId": "<your_bot_id>",
+    "prefix": "^",
+    "clientId": "<bot_id>",
+    "clientSecret": "<bot_secret>",
     "ownerId": "<your_id>",
     "mongoPath": "mongodb://<username>:<password>@<mongodb_server_ip>:27017/<database_name>",
     "database": "<your_mongo_database>",
-    "language": "en"
+    "language": "<your_language>",
+    "serverIP": "<your_server_ip/localhost>",
+    "webserver_port": 8000
 }
->>>>>>> 40dc787cc52330c31b04f5ad9c5b60cfbedfb77a
