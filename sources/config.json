@@ -2,8 +2,8 @@
     "name": "<your_bot_name>",
     "token": "<your_bot_token>",
     "prefix": "<prefix>",
-    "clientId": "795635957452767252",
-    "ownerId": "710319131983085599",
+    "clientId": "<your_bot_id>",
+    "ownerId": "<your_id>",
     "mongoPath": "mongodb://<username>:<password>@<mongodb_server_ip>:27017/<database_name>",
     "database": "<your_mongo_database>",
     "language": "en"
