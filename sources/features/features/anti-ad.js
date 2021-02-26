@@ -1,3 +1,5 @@
+const Discord = require('discord.js')
+
 module.exports = (client) => {
     const isInvite = async (guild, code) => {
       return await new Promise((resolve) => {
@@ -17,7 +19,12 @@ module.exports = (client) => {
     client.on('message', async (message) => {
       const { guild, member, content } = message
   
-      // discord.gg/23RAN4
+      const embed = new Discord.MessageEmbed()
+        .setAuthor(`${message.author.tag} has been warned`, member.user.displayAvatarURL())
+        .setColor("#FF0000")
+        .setDescription("This is because they used vulgarities/swearing on this server.")
+        .setFooter("Please be more careful next time")
+        .setTimestamp()
   
       const code = content.split('discord.gg/')[1]
 
@@ -26,8 +33,8 @@ module.exports = (client) => {
       } else if (content.includes('discord.gg/')) {
         const isOurInvite = await isInvite(guild, code)
         await message.delete()
-        await message.channel.send(`:warning: ${message.author} has been warned.\nReason: (S1-SD5:192356) Breaking rule 4 of this server.`)
-        await message.author.send(`:angry: ${message.author}, please do not advertise or send invites inside this server!\nYou are breaking rule 4 of this server.`)
+        await message.channel.send(embed)
+        await message.author.send(`:angry: ${message.author}, please do not advertise or send invites inside the ${client.guilds.cache.get(guild.id)} server!`)
         if (!isOurInvite) {
           // we know that they are advertising an outside discord server
         }

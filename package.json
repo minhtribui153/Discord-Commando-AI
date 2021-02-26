@@ -27,6 +27,7 @@
     },
     "dependencies": {
         "axios": "^0.21.1",
+        "body-parser": "^1.19.0",
         "chart.js": "^2.9.4",
         "chartjs-node-canvas": "^3.0.6",
         "commando-provider-mongo": "^2.0.2",
@@ -34,11 +35,17 @@
         "discord-tictactoe": "^2.0.7",
         "discord.js": "^12.5.1",
         "discord.js-commando": "github:discordjs/Commando",
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "express-session": "^1.17.1",
         "js-yaml": "^4.0.0",
+        "memorystore": "^1.6.4",
         "module-alias": "^2.2.2",
         "mongodb": "^3.6.4",
         "mongoose": "^5.9.24",
         "nodemon": "^2.0.7",
+        "passport": "^0.4.1",
+        "passport-discord": "^0.1.4",
         "quick.hook": "^1.5.1",
         "translate-google-api": "^1.0.4"
     }

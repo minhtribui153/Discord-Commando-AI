@@ -1,0 +1,4 @@
+<!-- Including our template blocks: -->
+<%- include("blocks/header.ejs", { bot, path, user, title: "Home" }); %> <!-- We include the header and we pass in the optios, the bot, path and user are automatically passed into main file by renderTemplate function  -->
+
+<%- include("blocks/footer.ejs"); %> <!-- We include the footer and we do not pass any parameters as the footer template does not require any. -->
