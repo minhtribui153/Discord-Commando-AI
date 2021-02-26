@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "name": "Discord Commando AI",
     "token": "Nzk1NjM1OTU3NDUyNzY3MjUy.X_MPug.9dbtDeCjvfYV7RnMdEbiBX5ijrs",
     "prefix": "^",
@@ -11,3 +12,14 @@
     "serverIP": "192.168.1.13",
     "webserver_port": 80
 }
+=======
+    "name": "<your_bot_name>",
+    "token": "<your_bot_token>",
+    "prefix": "<prefix>",
+    "clientId": "<your_bot_id>",
+    "ownerId": "<your_id>",
+    "mongoPath": "mongodb://<username>:<password>@<mongodb_server_ip>:27017/<database_name>",
+    "database": "<your_mongo_database>",
+    "language": "en"
+}
+>>>>>>> 40dc787cc52330c31b04f5ad9c5b60cfbedfb77a
