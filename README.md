@@ -35,9 +35,7 @@ You can set this up through the [config.json](./sources/config.json) file. I hav
 >    "ownerId": "<your_id>",
 >    "mongoPath": "mongodb://<username>:<password>@<mongodb_server_ip>:27017/<database_name>",
 >    "database": "<your_mongo_database>",
->    "language": "<your_language>",
->    "serverIP": "<your_server_ip/localhost>",
->    "webserver_port": 8000
+>    "language": "<your_language>"
 >}
 >```
 
