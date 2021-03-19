@@ -1,4 +1,5 @@
 # <b>Discord Commando AI</b>
+[![Discord Bots](https://top.gg/api/widget/795635957452767252.svg)](https://top.gg/bot/795635957452767252)
 Welcome to Discord Commando AI repository!
 
 We will go through on how this bot is built for and how to use it.
