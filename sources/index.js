@@ -102,7 +102,7 @@ client.on('ready', async () => {
         // Load Languages
         // loadLanguages(client)
     } catch(e) {
-        console.log(`[ERROR] ${e}`)
+        return
     }
 })
 client.login(config.token)
