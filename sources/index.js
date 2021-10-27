@@ -100,7 +100,7 @@ client.on('ready', async () => {
         loadFeatures(client)
 
         // Load Languages
-        loadLanguages(client)
+        // loadLanguages(client)
     } catch(e) {
         console.log(`[ERROR] ${e}`)
     }
