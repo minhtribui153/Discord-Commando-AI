@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "script": "nodemon ./sources/index.js",
-        "start": "npm i && nodemon ./sources/index.js"
+        "start": "node ./sources/index.js"
     },
     "keywords": [],
     "author": "Minh Tri Bui",
