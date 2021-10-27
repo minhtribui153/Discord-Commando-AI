@@ -4,7 +4,7 @@
     "prefix": "^",
     "clientId": "795635957452767252",
     "clientSecret": "6bRejeRlZZ5PqaAhAK4yqTeOQy8iSjN6",
-    "ownerId": "<710319131983085599",
+    "ownerId": "710319131983085599",
     "mongoPath": "mongodb+srv://tribui:Tri2107@bot.9a8rz.mongodb.net/Discord-Commando-AI",
     "database": "<your_mongo_database>",
     "language": "<your_language>"
