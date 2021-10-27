@@ -1,11 +1,11 @@
 {
     "name": "Discord Commando AI",
-    "token": "Nzk1NjM1OTU3NDUyNzY3MjUy.X_MPug.cLhTGHoPhQVRDixGaApZjZZy15w",
+    "token": "OTAyNzIyMjQwMjAwNzM2ODQ4.YXijmQ.ZSxg1rBGxtIGdg0xGInBFwK5kS4",
     "prefix": "^",
-    "clientId": "795635957452767252",
-    "clientSecret": "6bRejeRlZZ5PqaAhAK4yqTeOQy8iSjN6",
+    "clientId": "902722240200736848",
+    "clientSecret": "a0MRKOcyyncHQDckkXiJ44C70I5h7n6Y",
     "ownerId": "710319131983085599",
     "mongoPath": "mongodb+srv://tribui:Tri2107@bot.9a8rz.mongodb.net/Discord-Commando-AI",
-    "database": "<your_mongo_database>",
-    "language": "<your_language>"
+    "database": "Discord-Commando-AI",
+    "language": "english"
 }
